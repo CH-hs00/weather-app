@@ -1,0 +1,205 @@
+/* 전체 페이지 컨테이너 */
+.pageContainer {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #f9f7f6;
+}
+
+/* 1) 상단 중앙 작은 지구 아이콘 */
+.smallEarthWrapper {
+  text-align: center;
+  margin-bottom: -1.6rem;
+}
+
+/* 2) 페이지 타이틀 */
+.pageTitle {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: black
+}
+
+/* 3) 현재 날씨 박스 */
+.currentBox {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 아이콘 동그라미 */
+.iconCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f4d7cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+/* 날짜/시간 텍스트 */
+.currentDate {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* 도시명/인구수 */
+.currentCity {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+.population {
+  font-size: 0.6rem;
+  color: #7a7979;
+  font-weight: 550;
+  margin-left: 0rem;
+}
+
+/* 오른쪽 온도/추가 정보 영역 */
+.currentTempSection {
+  margin-left: auto;
+  text-align: right;
+}
+.currentTemp {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+.currentDetail {
+  font-size: 0.6rem;
+  color: #636363;
+}
+
+/* 4) 5-day Forecast 아코디언 */
+.accordionWrapper {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+.accordionHeader {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  color: black
+}
+.accordionList {
+  border-top: 1px solid #ececec;
+}
+.accordionDay {
+  border-bottom: 1px solid #ececec;
+}
+.accordionSummary {
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  position: relative;
+}
+/* summary 기본 마커 제거 */
+.accordionSummary::marker {
+  display: none;
+}
+.accordionSummary::-webkit-details-marker {
+  display: none;
+}
+/* 접힌 상태: down-chevron */
+.accordionSummary::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  /* down-chevron: 위쪽 border를 채워서 아래방향 삼각형으로 보이게 한다 */
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #e63946; /* 화살표 색 */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* 펼쳐졌을 때(up-chevron) */
+.accordionDay[open] > .accordionSummary::after {
+  /* content는 그대로 두고, 삼각형 방향만 바꾼다 */
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #e63946; /* 아래 border를 채워서 위 방향 삼각형으로 보이게 */
+  border-top: 0; /* 기존 border-top 제거 */
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.accordionDay > .accordionSummary + .accordionContent {
+  display: none;
+}
+/* 펼쳐졌을 때 내용 보이기 */
+.accordionDay[open] > .accordionContent {
+  display: block;
+}
+.accordionContent {
+  padding: 0.5rem 0;
+}
+
+/* 각 시간별 예보 행 */
+.timeRow {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0;
+}
+/* 작은 원형 아이콘 배경 (30×30) */
+.iconCircleSmall {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f4d7cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+/* 왼쪽: 아이콘 + 시간 그룹 */
+.timeLeft {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* 오른쪽 그룹이 맨 끝으로 밀림 */
+}
+.timeLabel {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 700;
+}
+.timeRight {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+/* 날씨 설명 (두 줄 중 첫 줄) */
+.timeDesc {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 0.25rem;
+}
+/* 예보 온도 / 체감온도 (두 줄 중 둘째 줄) */
+.timeTempGroup {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 0.25rem;
+}

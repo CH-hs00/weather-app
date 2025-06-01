@@ -1,0 +1,139 @@
+/* Container: 반응형 레이아웃 (1280 / 800~1279 / <800) */
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1280px; /* 1280px 이상에서는 최대 1280px 폭 */
+  box-sizing: border-box;
+  background-color: #f7f2f0;
+}
+
+@media (max-width: 1279px) {
+  .container {
+    padding: 1.2rem;
+    width: 100%; /* 800~1279px 구간에서는 화면 폭 100% 차지 */
+  }
+}
+
+@media (max-width: 799px) {
+  .container {
+    min-width: 800px; 
+    /* 800px 미만에서는 800px 고정, 스크롤로 볼 수 있게 */
+  }
+}
+
+
+/* Main 영역 기본 정렬 */
+.main {
+  padding: -2rem 0 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 920;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.highlight {
+  color: #ee103c
+}
+
+.description {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 0rem;
+  text-align: center;
+}
+
+
+/* topSection: Hover/Select + 버튼 그룹을 나란히 정렬 */
+.topSection {
+  display: flex;
+  justify-content: center;  /* 두 버튼 가운데로 묶음 */
+  align-items: flex-start;
+  gap: 0.8rem;                /* Hover/Select와 버튼 그룹 사이 간격 */
+  margin-bottom: 2rem;
+}
+
+
+/* Hover/Select 박스 (왼쪽 정렬 세로 배치) */
+.hoverSelectBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;   
+  text-align: left;
+  margin-top: -0.5rem; /* 그대로 유지 */
+}
+
+/* 라벨 텍스트 스타일 */
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0rem;
+}
+
+/* Hover/Select 버튼 기본 스타일 */
+.stateButton {
+  padding: 0.45rem 2rem;      /* 좌, 우 너비 */
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid #ee103c;  
+  color: #ee103c;
+  background-color: #ebb0a8;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  width: 140px;  
+}
+
+/*  Select 버튼( .selected 클래스 붙은)만 배경색 변경 */
+.stateButton.selected {
+  background-color: #e48478;
+}
+
+/*  도시 버튼 그룹 (가로, 가운데 정렬) */
+.buttonGroup {
+  display: flex;
+  gap: 0.4rem;          /* 버튼 간격 */
+  margin: 1.6rem 11rem 1.6rem 3rem;  /* top/right/bottom/left */
+}
+
+/* 도시 버튼 기본 스타일 */
+.cityButton {
+  background-color: #fdfcfc;
+  border: 2px solid #ee103c;
+  color: #ee103c;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  width: 140px;         /* 모든 버튼의 가로 크기 */
+  padding: 0.5rem 0;    
+  text-align: center;   /* 텍스트 가운데 정렬 */              
+}
+
+.cityButton:hover {
+  background-color: #ebb0a8;  /* 호버 시 배경을 빨간계열로 */
+  color: #ee103c;             /* 호버 시 글자 색 */
+}
+
+
+.cityButton:active {
+  background-color: #e48478; /* 클릭 시 버튼 배경색 */
+  color: #ee103c;            
+}
+
+/*  지구 이미지 크기 */
+.earthImageWrapper {
+  margin-top: -3rem;
+}
+.earthImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
