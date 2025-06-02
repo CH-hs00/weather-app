@@ -57,9 +57,9 @@ npm run dev
 - 메인 페이지에서 도시의 버튼을 클릭하면, 각각의 상세 페이지로 이동된다.
 - 각 상세 페이지 주소
     - [http://localhost:3000/Seoul](http://localhost:3000/Seoul)
-    - localhost:3000/Tokyo](http://localhost:3000/Tokyo)
-    - localhost:3000/Paris](http://localhost:3000/Paris)
-    - localhost:3000/London](http://localhost:3000/London)
+    - [http://localhost:3000/Tokyo](http://localhost:3000/Tokyo)
+    - [http://localhost:3000/Paris](http://localhost:3000/Paris)
+    - [http://localhost:3000/London](http://localhost:3000/London)
 
 ---
 
